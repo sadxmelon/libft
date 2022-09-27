@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalghfel <aalghfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 11:48:20 by aalghfel          #+#    #+#             */
-/*   Updated: 2022/09/27 18:16:39 by aalghfel         ###   ########.fr       */
+/*   Created: 2022/09/27 18:11:39 by aalghfel          #+#    #+#             */
+/*   Updated: 2022/09/27 18:24:20 by aalghfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	size_t	n;
+	char	digit;
 
-	i = 0;
-	if (ft_strlen(needle) == 0 || haystack == needle)
-		return (0);
-	while (haystack[i] && i < len)
+	if (n == -2147483648)
 	{
-		n = 0;
-		while (haystack[i + n] && needle[n] && haystack[i + n] == needle[n])
-			n++;
-		if (n == ft_strlen(needle))
-			return (&((char *)haystack)[i]);
-		i++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (0);
+	else if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		n = n % 10;
+	}
+	digit = n + '0';
+	write(fd, &digit, 1);
 }

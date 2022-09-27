@@ -6,7 +6,7 @@
 /*   By: aalghfel <aalghfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:48:35 by aalghfel          #+#    #+#             */
-/*   Updated: 2022/09/27 12:49:07 by aalghfel         ###   ########.fr       */
+/*   Updated: 2022/09/27 18:31:47 by aalghfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while (s[i++])
-		;
+	while (s[i])
+		i++;
 	return (i);
 }
