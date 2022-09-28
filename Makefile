@@ -6,7 +6,7 @@
 #    By: aalghfel <aalghfel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 12:27:17 by aalghfel          #+#    #+#              #
-#    Updated: 2022/09/27 18:27:57 by aalghfel         ###   ########.fr        #
+#    Updated: 2022/09/27 23:16:16 by aalghfel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,19 +49,20 @@ ft_toupper.c
 OBJECTS = $(SOURCES:.c=.o)
 CC = gcc -Wall -Wextra -Werror
 LIBC = ar rcs
+RM = rm -f
 
 $(NAME): all
 
 .c.o:
 	$(CC) -c $< -o $(<:.c=.o)
 
-all: $(SOURCES) $(OBJECTS)
+all: $(OBJECTS)
 	$(LIBC) $(NAME) $(OBJECTS)
 
-re: all
+re: clean all
 
 clean:
-	rm $(OBJECTS)
+	$(RM) $(OBJECTS)
 
 fclean: clean
-	rm $(NAME)
+	$(RM) $(NAME)

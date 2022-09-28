@@ -6,7 +6,7 @@
 /*   By: aalghfel <aalghfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 17:13:23 by aalghfel          #+#    #+#             */
-/*   Updated: 2022/09/27 18:23:21 by aalghfel         ###   ########.fr       */
+/*   Updated: 2022/09/28 01:01:54 by aalghfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,27 @@ int	len(int n)
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	char	*str;
+	char		*str;
+	size_t		i;
+	long int	num;
 
+	num = n;
 	i = len(n);
 	if (n < 0)
+	{
+		num *= -1;
 		i++;
+	}
 	str = malloc(i + 1);
 	if (!str)
 		return (0);
-	str[i--] = 0;
-	if (n == 0)
-		str[0] = '0';
+	str[i] = 0;
+	while (i--)
+	{
+		str[i] = num % 10 + '0';
+		num = num / 10;
+	}
 	if (n < 0)
 		str[0] = '-';
-	while (n > 0)
-	{
-		str[i--] = n % 10 + '0';
-		n /= 10;
-	}
-	return (str);
+	return (&str[0]);
 }
