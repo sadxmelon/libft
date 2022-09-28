@@ -6,7 +6,7 @@
 #    By: aalghfel <aalghfel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 12:27:17 by aalghfel          #+#    #+#              #
-#    Updated: 2022/09/27 23:16:16 by aalghfel         ###   ########.fr        #
+#    Updated: 2022/09/28 15:53:29 by aalghfel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,10 @@ ft_strtrim.c\
 ft_substr.c\
 ft_tolower.c\
 ft_toupper.c
+
+BONUS_SOURCE = ft_lstnew.c\
+
+
 
 OBJECTS = $(SOURCES:.c=.o)
 CC = gcc -Wall -Wextra -Werror

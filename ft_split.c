@@ -6,7 +6,7 @@
 /*   By: aalghfel <aalghfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:32:39 by aalghfel          #+#    #+#             */
-/*   Updated: 2022/09/28 12:16:01 by aalghfel         ###   ########.fr       */
+/*   Updated: 2022/09/28 15:43:31 by aalghfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,27 @@ int	word_len(char const *str, char sep)
 char	**ft_split(char const *s, char c)
 {
 	int		i;
+	int		j;
 	char	**str;
 
 	i = 0;
+	j = 0;
 	str = malloc(sizeof(char *) * (word_count(s, c) + 1));
-	if (!str || !s)
+	if (!str)
 		return (0);
+	if (!s)
+	{
+		free(str);
+		return (0);
+	}
 	while (i < word_count(s, c))
 	{
-		while (*s && *s == c)
-			s++;
-		if (!*s)
+		while (s[j] && s[j] == c)
+			j++;
+		if (!s[j])
 			break ;
-		str[i++] = ft_substr(s, 0, word_len(s, c));
-		s += word_len(s, c);
+		str[i++] = ft_substr(s, j, word_len(s + j, c));
+		j += word_len(s + j, c);
 	}
 	str[i] = 0;
 	return (str);
