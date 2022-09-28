@@ -6,7 +6,7 @@
 #    By: aalghfel <aalghfel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 12:27:17 by aalghfel          #+#    #+#              #
-#    Updated: 2022/09/28 17:15:09 by aalghfel         ###   ########.fr        #
+#    Updated: 2022/09/28 19:52:04 by aalghfel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ BONUS_SOURCES = ft_lstnew.c\
 ft_lstadd_front.c\
 ft_lstsize.c\
 ft_lstlast.c\
-t_lstadd_back.c\
+ft_lstadd_back.c\
 ft_lstdelone.c\
 ft_lstclear.c\
 ft_lstiter.c\
