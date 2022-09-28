@@ -6,7 +6,7 @@
 #    By: aalghfel <aalghfel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 12:27:17 by aalghfel          #+#    #+#              #
-#    Updated: 2022/09/28 15:53:29 by aalghfel         ###   ########.fr        #
+#    Updated: 2022/09/28 17:15:09 by aalghfel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,11 +46,21 @@ ft_substr.c\
 ft_tolower.c\
 ft_toupper.c
 
-BONUS_SOURCE = ft_lstnew.c\
+BONUS_SOURCES = ft_lstnew.c\
+ft_lstadd_front.c\
+ft_lstsize.c\
+ft_lstlast.c\
+t_lstadd_back.c\
+ft_lstdelone.c\
+ft_lstclear.c\
+ft_lstiter.c\
+ft_lstmap.c
+
 
 
 
 OBJECTS = $(SOURCES:.c=.o)
+BONUS_OBJECTS = $(BONUS_SOURCES:.c=.o)
 CC = gcc -Wall -Wextra -Werror
 LIBC = ar rcs
 RM = rm -f
@@ -66,7 +76,10 @@ all: $(OBJECTS)
 re: clean all
 
 clean:
-	$(RM) $(OBJECTS)
+	$(RM) $(OBJECTS) $(BONUS_OBJECTS)
 
 fclean: clean
 	$(RM) $(NAME)
+
+bonus: $(BONUS_SOURCES) $(BONUS_OBJECTS)
+	$(LIBC) $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
