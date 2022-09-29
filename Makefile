@@ -6,7 +6,7 @@
 #    By: aalghfel <aalghfel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 12:27:17 by aalghfel          #+#    #+#              #
-#    Updated: 2022/09/29 08:36:58 by aalghfel         ###   ########.fr        #
+#    Updated: 2022/09/29 09:27:00 by aalghfel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,5 +81,5 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-bonus: $(BONUS_SOURCES) $(BONUS_OBJECTS)
+bonus: $(OBJECTS) $(BONUS_OBJECTS)
 	$(LIBC) $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
