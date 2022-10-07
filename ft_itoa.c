@@ -6,13 +6,13 @@
 /*   By: aalghfel <aalghfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 17:13:23 by aalghfel          #+#    #+#             */
-/*   Updated: 2022/09/28 01:01:54 by aalghfel         ###   ########.fr       */
+/*   Updated: 2022/10/07 18:38:31 by aalghfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len(int n)
+static int	len(int n)
 {
 	if (n == (int)0x80000000)
 		return (10);

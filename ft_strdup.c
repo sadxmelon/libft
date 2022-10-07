@@ -6,7 +6,7 @@
 /*   By: aalghfel <aalghfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:08:31 by aalghfel          #+#    #+#             */
-/*   Updated: 2022/09/27 15:16:11 by aalghfel         ###   ########.fr       */
+/*   Updated: 2022/10/06 18:18:20 by aalghfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(char *src)
 	char	*dup;
 
 	size = ft_strlen(src);
-	dup = malloc(sizeof(char) * (size + 1));
+	dup = malloc(size + 1);
 	if (!dup)
 		return (0);
 	i = -1;
